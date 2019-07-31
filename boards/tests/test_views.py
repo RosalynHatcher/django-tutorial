@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.urls import resolve, reverse
 from django.test import TestCase
-from .forms import NewTopicForm
-from .views import home, board_topics, new_topic
-from .models import Board, Topic, Post
+from ..forms import NewTopicForm
+from ..views import home, board_topics, new_topic
+from ..models import Board, Topic, Post
 
 # Create your tests here.
 
@@ -123,5 +123,3 @@ class NewTopicTests(TestCase):
         response = self.client.get(url)
         form = response.context.get('form')
         self.assertIsInstance(form, NewTopicForm)
-
-
